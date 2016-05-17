@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  period: MyText
+  description: MyText
+  location: MyText
+  county_id: 1
+  town_id: 1
+  address: MyText
+  starttime_id: 1
+  endtime_id: 1
+  website: MyText
+  building: MyText
+
+two:
+  name: MyText
+  period: MyText
+  description: MyText
+  location: MyText
+  county_id: 1
+  town_id: 1
+  address: MyText
+  starttime_id: 1
+  endtime_id: 1
+  website: MyText
+  building: MyText

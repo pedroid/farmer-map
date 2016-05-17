@@ -1,0 +1,45 @@
+
+<%= stylesheet_link_tag "style" %>
+<div id="main_div">
+	<div id = 'info'>	</div>
+	<div id="ITRImap">
+		<div id="marker_div"></div>
+    <%= image_tag "taiwan_icon_spring.png", :id=>"ITRImap_img" %>
+      <%= image_tag "Gump_p.png", :id=>"thePositionIcon" %>
+		<canvas id="canvas" ></canvas>
+		<canvas id="marker_canvas"></canvas>
+			</div>
+	<div id = "img-div">
+		<!--<img id = "itri_pic" src = "img/initial.jpg"/ onprogress="loading_text()">-->  <!--img/initial.jpg-->
+		<div id="img_description"></div>
+		<div id="loading_progress"></div>
+	</div>
+
+
+	<div id="operation_info">
+		<p>
+		<div class="btn-group" role="group" aria-label="...">
+			<button id = "tab_left_button_id" type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
+			<button id = "tab_button_id" type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+			點一下改變季節
+		</div>
+
+
+		</p>
+	</div>
+
+	<div id="text_content">
+		<h2>news</h2>
+		<p><a href="http://www.nownews.com/n/2016/05/05/2086385" >蔡英文就職國宴8道菜曝光！全用在地當季好食材</a></p>
+		<h1>Feedback</h1>
+		<p>
+		<address>ntuyusheng@gmail.com</address>
+		</p>
+	</div>
+
+</div>
+
+<meta name="robots" content="noindex">
+
+
+<canvas id="itri_pic_canvas" width=500px></canvas>
