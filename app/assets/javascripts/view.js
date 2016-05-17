@@ -135,7 +135,7 @@ function continuous_update(){
 		marker_div_id.innerHTML="";
 
 		for(var i=0; i<index_to_show.length; i++){
-			marker_div_id.innerHTML += '<img class = "ptr" id="ptr' + i + '" src="'+ "assets/pointer.png" + '" />';
+			marker_div_id.innerHTML += '<img class = "ptr" id="ptr' + i + '" src="'+ "/assets/pointer.png" + '" />';
 			var id_element_to_get = 'ptr'+i;
 			var thePtr = document.getElementById(id_element_to_get);
 			thePtr.style.position = "absolute";
