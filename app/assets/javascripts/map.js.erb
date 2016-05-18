@@ -207,21 +207,26 @@ function configuration(){
 			//if(image_index == number_imgs) image_index = 0;
 			switch(jarvis.map_index){
 				case MAP_SPRING:
-					jogging_trajectory = jogging_trajectory_map1;
+					$('#ITRImap_img').attr( "src" , "<%= image_path 'taiwan_icon_spring.png' %>" );
+					//jogging_trajectory = jogging_trajectory_map1;
 					break;
 				case MAP_SUMMER:
-					img_itrimap.src = "/assets/taiwan_icon_summer.png";
-					var file_path = "/assets/taiwan_icon_summer.png";
+
+					$('#ITRImap_img').attr( "src" , "<%= image_path 'taiwan_icon_summer.png' %>" );
+					//img_itrimap.src = "/assets/taiwan_icon_summer.png";
+					//var file_path = "/assets/taiwan_icon_summer.png";
 					//loadImage(img_itrimap, file_path);
 					jarvis.current_season = 1;
 					break;
 				case MAP_FALL:
-					img_itrimap.src = "/assets/taiwan_icon_fall.png";
+					//img_itrimap.src = "/assets/taiwan_icon_fall.png";
+					$('#ITRImap_img').attr( "src" , "<%= image_path 'taiwan_icon_fall.png' %>" );
 					//loadImage(img_itrimap, file_path);
 					jarvis.current_season = 2;
 					break;
 				case MAP_WINTER:
-					img_itrimap.src = "/assets/taiwan_icon_winter.png";
+					//img_itrimap.src = "/assets/taiwan_icon_winter.png";
+					$('#ITRImap_img').attr( "src" , "<%= image_path 'taiwan_icon_winter.png' %>" );
 					//loadImage(img_itrimap, file_path);
 					jarvis.current_season = 3;
 					break;
@@ -262,18 +267,22 @@ function configuration(){
 			//if(image_index == number_imgs) image_index = 0;
 			switch(jarvis.map_index){
 				case MAP_SPRING:
-					img_itrimap.src = "/assets/taiwan_icon_spring.png";
+					//img_itrimap.src = "/assets/taiwan_icon_spring.png";
+					$('#ITRImap_img').attr( "src" , "<%= image_path 'taiwan_icon_spring.png' %>" );
 					break;
 				case MAP_SUMMER:
-					img_itrimap.src = "/assets/taiwan_icon_summer.png";
+					//img_itrimap.src = "/assets/taiwan_icon_summer.png";
+					$('#ITRImap_img').attr( "src" , "<%= image_path 'taiwan_icon_summer.png' %>" );
 					jarvis.current_season = 1;
 					break;
 				case MAP_FALL:
-					img_itrimap.src = "/assets/taiwan_icon_fall.png";
+					$('#ITRImap_img').attr( "src" , "<%= image_path 'taiwan_icon_fall.png' %>" );
+					//img_itrimap.src = "/assets/taiwan_icon_fall.png";
 					jarvis.current_season = 2;
 					break;
 				case MAP_WINTER:
-					img_itrimap.src = "/assets/taiwan_icon_winter.png";
+					$('#ITRImap_img').attr( "src" , "<%= image_path 'taiwan_icon_winter.png' %>" );
+					//img_itrimap.src = "/assets/taiwan_icon_winter.png";
 					jarvis.current_season = 3;
 					break;
 				default:
@@ -295,18 +304,22 @@ function configuration(){
 			//if(image_index == number_imgs) image_index = 0;
 			switch(jarvis.map_index){
 				case MAP_SPRING:
-					img_itrimap.src = "/assets/taiwan_icon_spring.png";
+					//img_itrimap.src = "/assets/taiwan_icon_spring.png";
+					$('#ITRImap_img').attr( "src" , "<%= image_path 'taiwan_icon_spring.png' %>" );
 					break;
 				case MAP_SUMMER:
-					img_itrimap.src = "/assets/taiwan_icon_summer.png";
+					//img_itrimap.src = "/assets/taiwan_icon_summer.png";
+					$('#ITRImap_img').attr( "src" , "<%= image_path 'taiwan_icon_summer.png' %>" );
 					jarvis.current_season = 1;
 					break;
 				case MAP_FALL:
-					img_itrimap.src = "/assets/taiwan_icon_fall.png";
+					//img_itrimap.src = "/assets/taiwan_icon_fall.png";
+					$('#ITRImap_img').attr( "src" , "<%= image_path 'taiwan_icon_fall.png' %>" );
 					jarvis.current_season = 2;
 					break;
 				case MAP_WINTER:
-					img_itrimap.src = "/assets/taiwan_icon_winter.png";
+					//img_itrimap.src = "/assets/taiwan_icon_winter.png";
+					$('#ITRImap_img').attr( "src" , "<%= image_path 'taiwan_icon_winter.png' %>" );
 					jarvis.current_season = 3;
 					break;
 				default:

@@ -115,7 +115,7 @@ function continuous_update(){
 	}
 	function print_specific_index_on_map(id_to_show){
 		marker_div_id.innerHTML="";
-		marker_div_id.innerHTML += '<img class = "ptr" id="ptr' + '0' + '" src="'+ "assets/pointer.png" + '" />';
+		marker_div_id.innerHTML += '<img class = "ptr" id="ptr' + '0' + '" src="'+ "/assets/pointer.png" + '" />';
 		var id_element_to_get = 'ptr0';
 		var thePtr = document.getElementById(id_element_to_get);
 		thePtr.style.position = "absolute";
@@ -135,7 +135,10 @@ function continuous_update(){
 		marker_div_id.innerHTML="";
 
 		for(var i=0; i<index_to_show.length; i++){
-			marker_div_id.innerHTML += '<img class = "ptr" id="ptr' + i + '" src="'+ "/assets/pointer.png" + '" />';
+			var ptr_id = 'ptr'+i;
+			marker_div_id.innerHTML += "<img class = 'ptr' id='" + ptr_id +  "'/>";
+			var id_image = '#ptr'+i;
+			$(id_image).attr( "src" , "<%= image_path 'pointer.png', :id => "+id_image+" %>" );
 			var id_element_to_get = 'ptr'+i;
 			var thePtr = document.getElementById(id_element_to_get);
 			thePtr.style.position = "absolute";
