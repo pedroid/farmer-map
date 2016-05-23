@@ -2,20 +2,17 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand" onclick="location.reload()">即時即食</a>
+      <%= link_to "即時即食", root_path, :class=>"navbar-brand", :'data-no-turbolink' =>  "true" %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-left">
-        <li><%= link_to "各地市集" %></li>
-        <li><%= link_to "Open Data" %></li>
-        <li><%= link_to "關於" %></li>
+        <li><%= link_to "Open Data",page_path("opendata") %></li>
+        <li><%= link_to "關於",page_path("about") %></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li> <%= link_to("登入", '#') %> </li>
-      </ul>
+
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

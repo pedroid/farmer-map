@@ -1,5 +1,11 @@
 
 <%= stylesheet_link_tag "style" %>
+<% content_for :header do %>
+<%= javascript_include_tag "map" %>
+<% end %>
+<%= javascript_tag do %>
+  map();
+  <% end %>
 <div id="main_div">
 	<div id = 'info'>	</div>
 	<div id="ITRImap">
@@ -21,7 +27,7 @@
 		<div class="btn-group" role="group" aria-label="...">
 			<button id = "tab_left_button_id" type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
 			<button id = "tab_button_id" type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
-			點一下改變季節
+			點一下改變季節(換按下[Tab]鍵)
 		</div>
 
 
@@ -29,12 +35,7 @@
 	</div>
 
 	<div id="text_content">
-		<h2>news</h2>
-		<p><a href="http://www.nownews.com/n/2016/05/05/2086385" >蔡英文就職國宴8道菜曝光！全用在地當季好食材</a></p>
-		<h1>Feedback</h1>
-		<p>
-		<address>ntuyusheng@gmail.com</address>
-		</p>
+
 	</div>
 
 </div>

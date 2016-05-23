@@ -1,0 +1,66 @@
+
+<%= javascript_include_tag "map" %>
+<div id="main_content">
+    <div id = "tody_info">
+    </div>
+</div>
+<!--<script src = 'fruit.js'></script>
+<script src = 'fruit_data.js'></script>
+-->
+<script src = 'data.js'></script>
+<!--<script src = 'main_db.js'></script>-->
+<h2><%= link_to "政府資料開放平台","http://data.gov.tw"%><%= link_to "每月盛產農產品","http://data.gov.tw/node/8120"%>Javascript API
+</h2>
+<p>author: <a target="_blank" href="http://yushengc1986.blogspot.com">Yu-Sheng Chen</a></p>
+<h2>原始資料</h2>
+[ { "type":"水果","month":"1","crop":"椪柑","variety":"","county":"苗栗縣","town":"卓蘭鎮"}, { "type":"水果","month":"1","crop":"椪柑","variety":"","county":"台中市","town":"東勢區"},...]
+<br/>
+<%= link_to "原始資料連結","http://data.coa.gov.tw/Service/OpenData/DataFileService.aspx?UnitId=061"%>
+<!--���G�ݺ����H�U�榡</br>
+[</br>
+{content_type1:content1-1, content_type2:content1-2,content_type3:content1-3, ..., content_typeN:content1-N},</br>
+{content_type1:content2-1, content_type2:content2-2,content_type3:content2-3, ..., content_typeN:content2-N},</br>
+{content_type1:content3-1, content_type2:content3-2,content_type3:content3-3, ..., content_typeM:content3-N},</br>
+...</br>
+{content_type1:contentM-1, content_type2:contentM-2,content_type3:contentM-3, ..., content_typeM:contentM-N}</br>
+]</br>
+-->
+<h2>使用方法</h2>
+<ol>
+	<li>下載<%= link_to "db.js","https://dl.dropboxusercontent.com/u/32119999/07taiwan-fruit/db.js"%>
+    </li>
+	<li>在html中的&lt;head&gt;與&lt;/head&gt;之間加入&lt;script src = 'db.js'&gt;&lt;/script&gt;即可使用crops 這個object</li>
+
+</ol>
+<h2>example:查詢在指定的鄉鎮中有哪些農產品</h2>
+<ol>
+<li>按下F12打開Console模式</li>
+<li>在console中輸入crops.filter('太平區', 'town').db[0]</li>
+即可以得到在太平區這個鄉鎮所有農產農產品中的第一項
+
+</ol>
+<h2>crops Class說明</h2>
+我們將農產品存在crops 這個class裡面，並實作了相關的method來處理這些資料，我們使用遞規的技巧實作，所以物件的操作可以用串流的方式使用。比如說我們想要過濾在夏季裡在太平區盛產的農產品，就可以用crops.filter('太平區','town').filter_season(1).print2console();的方式取得
+<h3>class assets</h3>
+<h3>db</h3>
+存放json檔案被parse後的檔案。存取方式範例：crops.db[0]
+<p>ex:crops.db[0]</p>
+<h2>class method</h2>
+<h3>filter(content, content_type)</h3>
+<p>
+  content的值填的事鄉鎮名稱, 而content_type填入的是屬性，比如'太平區'的屬性是'town'，則可以這樣用：crops.filter('太平區','town')
+  此filter()會回傳dataset_class Object，因此可以遞規(recursive)的使用這個method.</p>
+<h3>filter_season(season)</h3>
+<p>
+  過濾目前db中屬於指定季節的資料，season = 0,1,2,3</br>
+  0: 春</br>
+  1: 夏</br>
+  2: 秋</br>
+  3: 冬</br>
+</p>
+
+<h3>print2console()</h3>
+
+
+<p>印出該object底下db中的所有資料</p>
+<p>ex:crops.filter('太平區','town').print2console()</p>

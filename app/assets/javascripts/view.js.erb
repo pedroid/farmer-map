@@ -8,6 +8,7 @@ function repeat(fn) {
 function wait(fn) {window.setTimeout(fn, 250); }
 
 function continuous_update(){
+	//console.log('test');
 	//console.log(100*protagonist.x/size_itrimap_width + ','+ 100*protagonist.y/size_itrimap_height);
 		c.clear();
 		protagonist.x = protagonist.x + protagonist.dx;
@@ -222,6 +223,7 @@ function continuous_update(){
 					var crops_to_show = crops.filter(town_closest,'town').filter_season(jarvis.current_season);
 					text_description = crops_to_show.returnCropSpecificSeason();
 					var html_town_to_suggest = ''
+					//console.log(jarvis.current_season);
 					switch(jarvis.current_season){
 						case 0:html_town_to_suggest+='<b>春季</b>';break;
 						case 1:html_town_to_suggest+='<b>夏季</b>';break;

@@ -1,21 +1,20 @@
 //global variables
+function map(){
+	//console.log('test');
+	var ready = function(){
+		//console.log('window onload');
+		protagonist = new Protagonist;
+		jarvis = new JARVIS; //assistant managing system information and behavior
+		//parseXML(parseXML_callback);
 
-const MAP_SPRING = 0;
-const MAP_SUMMER = 1;
-const MAP_FALL = 2;
-const MAP_WINTER = 3;
-window.onload = function(){
-
-	protagonist = new Protagonist;
-	jarvis = new JARVIS; //assistant managing system information and behavior
-	//parseXML(parseXML_callback);
-
-	crops_main();
-	test();
-	configuration();
-	repeat(continuous_update);
-
+		crops_main();
+		test();
+		configuration();
+		repeat(continuous_update);
+	};
+	$(window).load(ready);
 }
+	//repeat(continuous_update);
 
 function crops_main(){
 	//Octopus
@@ -121,6 +120,7 @@ function parseXML_callback(){
 
 function configuration(){
 	//console.log('configuration start');
+	//console.log('configuration');
 	sys_inf = document.getElementById('info');
 	img_itrimap = document.getElementById('ITRImap_img');
 	jarvis.size_itrimap_width = img_itrimap.clientWidth;
@@ -204,11 +204,13 @@ function configuration(){
 		else if ( key == 9) {		//Tab- change map
 			//console.log('Tab');
 			jarvis.map_index = jarvis.map_index + 1; //s
+			if(jarvis.map_index==4){jarvis.map_index=0;}
 			//if(image_index == number_imgs) image_index = 0;
 			switch(jarvis.map_index){
 				case MAP_SPRING:
 					$('#ITRImap_img').attr( "src" , "<%= image_path 'taiwan_icon_spring.png' %>" );
 					//jogging_trajectory = jogging_trajectory_map1;
+					jarvis.current_season = 0;
 					break;
 				case MAP_SUMMER:
 
@@ -231,7 +233,7 @@ function configuration(){
 					jarvis.current_season = 3;
 					break;
 				default:
-					jarvis.map_index = 0;
+					//jarvis.map_index = 0;
 
 
 			}
@@ -263,12 +265,14 @@ function configuration(){
 		//console.log('Tab');
 			jarvis.map_index = jarvis.map_index + 1; //s
 			if(jarvis.map_index>3){jarvis.map_index = 0;}
+			if(jarvis.map_index==-1){jarvis.map_index = 3;}
 			//console.log(jarvis.map_index);
 			//if(image_index == number_imgs) image_index = 0;
 			switch(jarvis.map_index){
 				case MAP_SPRING:
 					//img_itrimap.src = "/assets/taiwan_icon_spring.png";
 					$('#ITRImap_img').attr( "src" , "<%= image_path 'taiwan_icon_spring.png' %>" );
+					jarvis.current_season = 0;
 					break;
 				case MAP_SUMMER:
 					//img_itrimap.src = "/assets/taiwan_icon_summer.png";
@@ -286,7 +290,6 @@ function configuration(){
 					jarvis.current_season = 3;
 					break;
 				default:
-					jarvis.map_index = 0;
 
 
 			}
