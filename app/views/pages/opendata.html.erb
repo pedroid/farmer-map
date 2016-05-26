@@ -9,7 +9,7 @@
 -->
 <script src = 'data.js'></script>
 <!--<script src = 'main_db.js'></script>-->
-<h2><%= link_to "政府資料開放平台","http://data.gov.tw"%><%= link_to "每月盛產農產品","http://data.gov.tw/node/8120"%>Javascript API
+<h2><%= link_to "政府資料開放平台","http://data.gov.tw",:target=>"_blank" %><%= link_to "每月盛產農產品","http://data.gov.tw/node/8120",:target=>"_blank" %>Javascript API
 </h2>
 <p>author: <a target="_blank" href="http://yushengc1986.blogspot.com">Yu-Sheng Chen</a></p>
 <h2>原始資料</h2>
@@ -32,7 +32,7 @@
 	<li>在html中的&lt;head&gt;與&lt;/head&gt;之間加入&lt;script src = 'db.js'&gt;&lt;/script&gt;即可使用crops 這個object</li>
 
 </ol>
-<h2>example:查詢在指定的鄉鎮中有哪些農產品</h2>
+<h2>example:查詢在指定的鄉鎮中有哪些農產品</h2>
 <ol>
 <li>按下F12打開Console模式</li>
 <li>在console中輸入crops.filter('太平區', 'town').db[0]</li>
